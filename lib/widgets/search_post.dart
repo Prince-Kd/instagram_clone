@@ -10,16 +10,12 @@ class SearchPost extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int rnd = Random().nextInt(2);
-
-    return StaggeredGridTile.count(
-        crossAxisCellCount: 1,
-        mainAxisCellCount: rnd+1,
-        child: InkWell(
+    return InkWell(
           onTap: (){},
           splashColor: Colors.transparent,
           child: Image.asset('assets/$index.jpeg', fit: BoxFit.cover,),
-        ));
+        );
   }
 }
+
 

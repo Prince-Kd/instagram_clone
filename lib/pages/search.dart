@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -9,22 +11,49 @@ class Search extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> posts = List.generate(20, (index) => SearchPost(index: index));
     return Scaffold(
-        body: CustomScrollView(
-      //physics: const AlwaysScrollableScrollPhysics(),
-      slivers: [
-        SliverAppBar(title: SearchWidget()),
-        SliverFillRemaining(
-          fillOverscroll: true,
-          child: StaggeredGrid.count(
-            crossAxisCount: 3,
-            mainAxisSpacing: 2,
-            crossAxisSpacing: 2,
-            children: [...posts],
-          ),
-        )
-      ],
-    ));
+        body: SafeArea(
+          child: NestedScrollView(
+              floatHeaderSlivers: true,
+              headerSliverBuilder: (context, bool innerBoxIsScrolled) => [
+                    const SliverAppBar(
+                        snap: true,
+                        floating: true,
+                        title: SearchWidget(),
+                    ),
+                  ],
+              body: StaggeredGridView.countBuilder(
+                padding: const EdgeInsets.only(top: 0),
+                crossAxisCount: 3,
+                itemCount: 34,
+                itemBuilder: (BuildContext context, int index) =>
+                    SearchPost(index: index),
+                staggeredTileBuilder: (int index) =>
+                    StaggeredTile.count(1, index.isEven ? 2 : 1),
+                mainAxisSpacing: 2.0,
+                crossAxisSpacing: 2.0,
+              )),
+        ));
   }
 }
+
+// Padding(
+// padding: const EdgeInsets.only(top: 0),
+// child: GridView(
+// gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+// crossAxisCount: 3,
+// mainAxisSpacing: 2,
+// crossAxisSpacing: 2,
+// ),
+// physics: const NeverScrollableScrollPhysics(),
+// children: [
+// StaggeredGrid.count(
+// crossAxisCount: 3,
+// mainAxisSpacing: 2,
+// crossAxisSpacing: 2,
+// children: [
+// ...posts
+// ],
+// ),
+// ],
+// ),
