@@ -32,7 +32,7 @@ class Search extends StatelessWidget {
                     StaggeredTile.count(1, index.isEven ? 2 : 1),
                 mainAxisSpacing: 2.0,
                 crossAxisSpacing: 2.0,
-              )),
+              ),),
         ));
   }
 }

@@ -10,7 +10,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Widget> stories = List.generate(10, (index) => StoryCard());
-    List<Widget> posts = List.generate(10, (index) => Post());
+    List<Widget> posts = List.generate(34, (index) => Post(index: index,));
     return Scaffold(
       appBar: AppBar(
         title: const Text(
