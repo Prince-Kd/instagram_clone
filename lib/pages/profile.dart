@@ -197,20 +197,27 @@ class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
                 unselectedLabelColor: Colors.grey,
                 indicatorColor: Colors.black,
                 controller: controller,
-                tabs: const [
-                  Tab(
+                tabs: [
+                  const Tab(
                     icon: Icon(
-                      Icons.grid_3x3,
+                      Icons.grid_on,
                     ),
                   ),
                   Tab(
-                    text: 'Tab2',
+                    icon: ClipRRect(
+                        borderRadius: BorderRadius.circular(7),
+                        child: Image.asset(
+                          'assets/reel.png',
+                          fit: BoxFit.contain,
+                          width: 22,
+                          height: 22,
+                        )),
+                  ),
+                  const Tab(
+                    icon: Icon(Icons.play_arrow_outlined, size: 34,),
                   ),
                   Tab(
-                    text: 'Tab3',
-                  ),
-                  Tab(
-                    text: 'Tab4',
+                    icon: Icon(Icons.account_box_outlined, size: 26,),
                   )
                 ]),
             SizedBox(
