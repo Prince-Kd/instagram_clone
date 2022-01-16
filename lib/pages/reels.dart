@@ -112,7 +112,7 @@ class Reels extends StatelessWidget {
                                   child: Container(
                                     height: 25,
                                     width: 25,
-                                    child: Image.asset('assets/4.jpeg'),
+                                    child: img,
                                     decoration: BoxDecoration(
                                       border: Border.all(
                                         color: Colors.white,
