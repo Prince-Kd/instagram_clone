@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class StoryAvatar extends StatelessWidget {
-  const StoryAvatar({Key? key}) : super(key: key);
+  final int index;
+  const StoryAvatar({Key? key, required this.index}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,10 +12,10 @@ class StoryAvatar extends StatelessWidget {
       child: Container(
         //width: 75,
         decoration: BoxDecoration(color: Colors.white, border: Border.all(color: Colors.grey,), shape: BoxShape.circle),
-        child: const Padding(
-          padding: EdgeInsets.all(5.0),
+        child: Padding(
+          padding: const EdgeInsets.all(5.0),
           child: CircleAvatar(
-            backgroundImage: AssetImage('assets/shoes.jpeg'),
+            backgroundImage: AssetImage('assets/$index.jpeg'),
             radius: 32,
           ),
         ),

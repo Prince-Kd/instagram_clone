@@ -10,10 +10,11 @@ class SearchPost extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double height = MediaQuery.of(context).size.height;
     return InkWell(
           onTap: (){},
           splashColor: Colors.transparent,
-          child: Image.asset('assets/$index.jpeg', fit: BoxFit.cover,),
+          child: Image.asset('assets/$index.jpeg', fit: BoxFit.cover, height: height,),
         );
   }
 }

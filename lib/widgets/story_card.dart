@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:instagram_clone/widgets/story_avatar.dart';
 
 class StoryCard extends StatelessWidget {
-  const StoryCard({Key? key}) : super(key: key);
+  final int index;
+  const StoryCard({Key? key, required this.index}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class StoryCard extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            StoryAvatar(),
+            StoryAvatar(index: index,),
             Text('IcePrinceOfGoshen', textAlign: TextAlign.center, style: TextStyle(fontSize: 13), overflow: TextOverflow.ellipsis,)
           ],
         ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:instagram_clone/widgets/post.dart';
 import 'package:instagram_clone/widgets/story_card.dart';
 import 'package:instagram_clone/widgets/your_story.dart';
@@ -9,7 +8,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> stories = List.generate(10, (index) => StoryCard());
+    List<Widget> stories = List.generate(10, (index) => StoryCard(index: index,));
     List<Widget> posts = List.generate(34, (index) => Post(index: index,));
     return Scaffold(
       appBar: AppBar(
