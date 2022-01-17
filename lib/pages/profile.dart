@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:instagram_clone/widgets/search_post.dart';
 import 'package:instagram_clone/widgets/stats_card.dart';
@@ -13,6 +12,7 @@ class Profile extends StatefulWidget {
 
 class _ProfileState extends State<Profile> with SingleTickerProviderStateMixin {
   TabController? controller;
+  
   @override
   void initState() {
     // TODO: implement initState
